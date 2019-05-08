@@ -50,6 +50,7 @@ class DiscreteDistribution(BaseDistribution):
     def count_x(self, x):
         return len(self._vector[self._vector == x])
 
+
 class GaussianDistribution(BaseDistribution):
 
     def __init__(self, vector):

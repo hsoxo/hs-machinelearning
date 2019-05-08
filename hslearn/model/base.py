@@ -16,6 +16,18 @@ class BaseModel(metaclass=ABCMeta):
         return self._model
 
     @property
+    def x(self):
+        return self.features
+
+    @property
+    def features(self):
+        return self._dataset[:, :-1]
+
+    @property
+    def y(self):
+        return self.labels
+
+    @property
     def labels(self):
         return self._dataset[:, -1]
 
@@ -26,4 +38,5 @@ class BaseModel(metaclass=ABCMeta):
     @property
     def sample_size(self):
         return self._dataset.shape[0]
+
 
